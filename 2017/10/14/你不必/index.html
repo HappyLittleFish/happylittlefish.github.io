@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="文章," />
 
 
 
@@ -80,13 +80,14 @@
 
 
 <meta name="description" content="你不必把这杯白酒干了， 喝到胃穿孔，也不会获得帮助，不会获得尊重。 你不必放弃玩音乐，不必出专辑，也不必放弃工作， 不必介意成为一个带着奶瓶的朋克。 你不必在本子上记录， 大部分会议是在浪费时间，你不必假装殷勤一直记录。 你不必总是笑， 不必每一条微信都回复，不必处处点赞。 你不必有什么户口，也不必要求别人要有什么户口。 即便生存不易，也不必让爸妈去相亲角被别人盘问出身。 你不必买大房子，不必在月">
+<meta name="keywords" content="文章">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你不必">
 <meta property="og:url" content="https://happylittlefish.github.io/2017/10/14/你不必/index.html">
 <meta property="og:site_name" content="Happylittlefish">
 <meta property="og:description" content="你不必把这杯白酒干了， 喝到胃穿孔，也不会获得帮助，不会获得尊重。 你不必放弃玩音乐，不必出专辑，也不必放弃工作， 不必介意成为一个带着奶瓶的朋克。 你不必在本子上记录， 大部分会议是在浪费时间，你不必假装殷勤一直记录。 你不必总是笑， 不必每一条微信都回复，不必处处点赞。 你不必有什么户口，也不必要求别人要有什么户口。 即便生存不易，也不必让爸妈去相亲角被别人盘问出身。 你不必买大房子，不必在月">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-14T09:58:58.000Z">
+<meta property="og:updated_time" content="2018-03-25T02:02:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你不必">
 <meta name="twitter:description" content="你不必把这杯白酒干了， 喝到胃穿孔，也不会获得帮助，不会获得尊重。 你不必放弃玩音乐，不必出专辑，也不必放弃工作， 不必介意成为一个带着奶瓶的朋克。 你不必在本子上记录， 大部分会议是在浪费时间，你不必假装殷勤一直记录。 你不必总是笑， 不必每一条微信都回复，不必处处点赞。 你不必有什么户口，也不必要求别人要有什么户口。 即便生存不易，也不必让爸妈去相亲角被别人盘问出身。 你不必买大房子，不必在月">
@@ -108,9 +109,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'KYNK0KBLZG',
+      apiKey: '4358935020b8d77609f3cb7db5922cd7',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -219,31 +220,49 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -267,7 +286,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -391,6 +410,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/文章/" rel="tag"># 文章</a>
+          
+        </div>
+      
 
       
       
@@ -410,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/25/flexbox/" rel="prev" title="flexbox">
-                flexbox <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/25/flexbox/" rel="prev" title="Flexbox布局">
+                Flexbox布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -487,13 +512,22 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -704,6 +738,19 @@
   
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 

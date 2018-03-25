@@ -107,9 +107,9 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'KYNK0KBLZG',
+      apiKey: '4358935020b8d77609f3cb7db5922cd7',
+      indexName: 'blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -219,31 +219,49 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
-            
-            站点地图
-          </a>
-        </li>
-      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -267,7 +285,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -291,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/25/flexbox/" itemprop="url">flexbox</a></h1>
+                <a class="post-title-link" href="/2018/03/25/flexbox/" itemprop="url">Flexbox布局</a></h1>
         
 
         <div class="post-meta">
@@ -313,6 +331,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -343,30 +383,18 @@
       
         
           
-            <h2 id="1-Flex基本概念"><a href="#1-Flex基本概念" class="headerlink" title="1.Flex基本概念"></a>1.Flex基本概念</h2><p> 采用Flex布局的元素，称为Flex容器。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。 </p>
-<h2 id="2-容器属性"><a href="#2-容器属性" class="headerlink" title="2.容器属性"></a>2.容器属性</h2><ul>
-<li>flex-direction: row | row-reverse | column | column-reverse</li>
-<li>flex-wrap: nowrap | wrap | wrap-reverse</li>
-<li>flex-flow: <code>&lt;flex-direction&gt; || &lt;flex-wrap&gt;</code></li>
-<li>justify-content: flex-start | flex-end | center | space-between | space-around;</li>
-</ul>
-<blockquote>
-<p>space-between：两端对齐，项目之间的间隔都相等。<br>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。 </p>
-</blockquote>
-<ul>
-<li>align-items: flex-start | flex-end | center | baseline | stretch;</li>
-<li>多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。align-content: flex-start | flex-end | center | space-between | space-around | stretch;</li>
-</ul>
-<h2 id="3-项目属性"><a href="#3-项目属性" class="headerlink" title="3.项目属性"></a>3.项目属性</h2><ul>
-<li>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</li>
-<li>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</li>
-<li>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</li>
-<li>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</li>
-<li>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</li>
-<li>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</li>
-</ul>
-
-          
+          1.Flex基本概念 采用Flex布局的元素，称为Flex容器。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。 
+2.容器属性
+flex-direction: row | row-reverse | column | column-reverse
+flex-w
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/25/flexbox/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -408,7 +436,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -484,45 +512,23 @@
       
         
           
-            <p>你不必把这杯白酒干了，</p>
-<p>喝到胃穿孔，也不会获得帮助，不会获得尊重。</p>
-<p>你不必放弃玩音乐，不必出专辑，也不必放弃工作，</p>
-<p>不必介意成为一个带着奶瓶的朋克。</p>
-<p>你不必在本子上记录，</p>
-<p>大部分会议是在浪费时间，你不必假装殷勤一直记录。</p>
-<p>你不必总是笑，</p>
-<p>不必每一条微信都回复，不必处处点赞。</p>
-<p>你不必有什么户口，也不必要求别人要有什么户口。</p>
-<p>即便生存不易，也不必让爸妈去相亲角被别人盘问出身。</p>
-<p>你不必买大房子，不必在月薪一万的时候就贷款三百万。</p>
-<p>三十年后，当孩子们问起那些年你有什么故事，你不能只有贷款。</p>
-<p>你不必去知名的大公司追求梦想，</p>
-<p>你想逃离的种种，在那里同样会有。</p>
-<p>你不必去大城市，也不必逃离北上广。</p>
-<p>不必用别人的一篇十万加来决定自己的一辈子。</p>
-<p>你不必改变自己。</p>
-<p>不必相信一万小时定律，不必读成功学，</p>
-<p>不必加入高管群，不必为成为第二个什么人。</p>
-<p>你不必听狭隘女权主义者的杂音，</p>
-<p>不必理会那些只要求特权，却不尽义务的人。</p>
-<p>你不必用睡过多少女孩，来证明魅力。</p>
-<p>这不值得炫耀，而且你并不知道是谁睡了谁。</p>
-<p>你不必让所有人都开心。</p>
-<p>不必每次旅游都要带礼物，</p>
-<p>不必一次不落的随份子，不必在饭桌上辛苦地计算座次。</p>
-<p>你不必在过年的时候衣锦还乡。</p>
-<p>不必发那么大的红包，不必开车送每一个人回家。</p>
-<p>你不必承担所有责任。</p>
-<p>不必为拒绝借钱给朋友而过意不去，</p>
-<p>不必为父母的节俭而内疚，不必向路边的每一个乞讨者伸出援手。</p>
-<p>你不必刻意追求传说中的彼岸和远方，</p>
-<p>每一个你想抵达的地方，都有人和你一样想逃离。</p>
-<p>你不必在深夜停车之后，在楼下抽支烟再回家。</p>
-<p>你不必背负那么多，</p>
-<p>你不必成功。 </p>
-<p>别用所谓的成功，定义你的人生。</p>
-
-          
+          你不必把这杯白酒干了，
+喝到胃穿孔，也不会获得帮助，不会获得尊重。
+你不必放弃玩音乐，不必出专辑，也不必放弃工作，
+不必介意成为一个带着奶瓶的朋克。
+你不必在本子上记录，
+大部分会议是在浪费时间，你不必假装殷勤一直记录。
+你不必总是笑，
+不必每一条微信都回复，不必处处点赞。
+你不必有什么户口，也不必
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/14/你不必/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -640,8 +646,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/12/我的第一篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -759,17 +772,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/12/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -856,13 +867,22 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1069,6 +1089,19 @@
   
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
